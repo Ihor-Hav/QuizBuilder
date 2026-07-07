@@ -13,7 +13,6 @@ import { useFieldArray } from "react-hook-form";
 import { Button } from "../ui/button";
 import QuestionBlock from "./QuestionBlock";
 import type { QuizFormData } from "@/schemas/quiz.schema";
-import { useNavigate } from "react-router-dom";
 
 export default function QuizCreationForm() {
   const form = useForm({
@@ -23,8 +22,6 @@ export default function QuizCreationForm() {
     },
     resolver: zodResolver(QuizFormSchema),
   });
-
-  const navigate = useNavigate();
 
   const questionArray = useFieldArray({
     control: form.control,
@@ -49,8 +46,11 @@ export default function QuizCreationForm() {
         throw new Error("Failed to create quiz");
       }
 
-      const result = await res.json();
-      navigate("/create");
+      form.reset({
+        title: "",
+        description: "",
+        questions: [],
+      });
     } catch (error) {
       console.error("Submit error:", error);
     }
