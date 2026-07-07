@@ -35,14 +35,21 @@ npm run dev
 ```
 
 ## BACKEND ROUTES
+<br/>
 METHOD: GET /api/quizzes
+<br/>
 METHOD: POST /api/quizzes
+<br/>
 METHOD: GET /api/quizzes/:id
+<br/>
 METHOD: DELETE /api/quizzes/:id
+<br/>
 
-##FRONTEND URLS
+## FRONTEND URLS
 /create
+<br/>
 /quizzes
+<br/>
 /quizzes/:id
 
 ## ADDITIONAL INFORMATION
